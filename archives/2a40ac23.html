@@ -23,28 +23,38 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hexo.zxiaosi.cn","root":"/","images":"/images","scheme":"Gemini","version":"8.5.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta name="description" content="转载自：如何在Windows 10家庭版上安装Docker - DockOne.io  一、Windows10家庭版安装Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实习入职">
-<meta property="og:url" content="https://hexo.zxiaosi.cn/archives/884863d2.html">
+<meta property="og:title" content="Windows下Docker安装">
+<meta property="og:url" content="https://hexo.zxiaosi.cn/archives/2a40ac23.html">
 <meta property="og:site_name" content="小四先生的博客">
-<meta property="og:description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta property="og:description" content="转载自：如何在Windows 10家庭版上安装Docker - DockOne.io  一、Windows10家庭版安装Docker">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-07-27T11:42:41.000Z">
-<meta property="article:modified_time" content="2021-07-29T12:21:28.857Z">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/Professional.png">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/%E5%90%AF%E7%94%A8windows%E5%8A%9F%E8%83%BD.png">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/wsl2%E6%8A%A5%E9%94%99.png">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/wsl%E5%86%85%E6%A0%B8.png">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/image-20210728094043590.png">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/2.png">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/ID.png">
+<meta property="og:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/push.png">
+<meta property="article:published_time" content="2021-07-29T12:19:29.000Z">
+<meta property="article:modified_time" content="2021-07-30T12:51:35.398Z">
 <meta property="article:author" content="Mr.XiaoSi">
-<meta property="article:tag" content="日常">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/Professional.png">
 
 
-<link rel="canonical" href="https://hexo.zxiaosi.cn/archives/884863d2.html">
+<link rel="canonical" href="https://hexo.zxiaosi.cn/archives/2a40ac23.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":"","permalink":"https://hexo.zxiaosi.cn/archives/884863d2.html","path":"archives/884863d2.html","title":"实习入职"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hexo.zxiaosi.cn/archives/2a40ac23.html","path":"archives/2a40ac23.html","title":"Windows下Docker安装"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>实习入职 | 小四先生的博客</title>
+<title>Windows下Docker安装 | 小四先生的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFV6F84KP1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-LFV6F84KP1","only_pageview":false}</script>
@@ -145,7 +155,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -158,6 +168,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%AE%89%E8%A3%85Docker"><span class="nav-text">一、Windows10家庭版安装Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%89%80%E9%9C%80%E6%96%87%E4%BB%B6"><span class="nav-text">1.1 所需文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AE%89%E8%A3%85Hyper-V"><span class="nav-text">1.2 安装Hyper-V</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%AE%89%E8%A3%85Containers"><span class="nav-text">1.3 安装Containers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E9%87%8D%E5%90%AF%E7%94%B5%E8%84%91"><span class="nav-text">1.4 重启电脑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E7%BC%96%E8%BE%91%E6%B3%A8%E5%86%8C%E8%A1%A8%E4%B8%AD%E7%9A%84Windows%E7%89%88%E6%9C%AC"><span class="nav-text">1.5 编辑注册表中的Windows版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-%E5%AE%89%E8%A3%85Docker"><span class="nav-text">1.6 安装Docker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Windows10%E4%B8%93%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85Docker"><span class="nav-text">二、Windows10专业版安装Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%89%93%E5%BC%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-text">2.1 打开需要的服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%AE%89%E8%A3%85Docker"><span class="nav-text">2.2 安装Docker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-text">三、常见错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-WSL2-%E6%8A%A5%E9%94%99"><span class="nav-text">3.1 WSL2 报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Docker-%E5%8D%B8%E8%BD%BD%E9%87%8D%E8%A3%85%E6%8A%A5%E9%94%99%EF%BC%88Windows%E5%AE%B6%E5%BA%AD%E7%89%88%EF%BC%89"><span class="nav-text">3.2 Docker 卸载重装报错（Windows家庭版）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="nav-text">四、其他操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Docker-%E4%B8%8A%E4%BC%A0%E9%95%9C%E5%83%8F"><span class="nav-text">4.1 Docker 上传镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Docker-%E6%9B%B4%E6%8D%A2%E4%BD%8D%E7%BD%AE"><span class="nav-text">4.2 Docker 更换位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Docker-%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-text">4.3 Docker 连接本地数据库</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -587,7 +598,7 @@ if(canvas.getContext){
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hexo.zxiaosi.cn/archives/884863d2.html">
+    <link itemprop="mainEntityOfPage" href="https://hexo.zxiaosi.cn/archives/2a40ac23.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Hexo/icon/author.webp">
@@ -600,7 +611,7 @@ if(canvas.getContext){
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          实习入职
+          Windows下Docker安装
         </h1>
 
         <div class="post-meta-container">
@@ -612,14 +623,14 @@ if(canvas.getContext){
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-07-27 19:42:41" itemprop="dateCreated datePublished" datetime="2021-07-27T19:42:41+08:00">2021-07-27</time>
+      <time title="创建时间：2021-07-29 20:19:29" itemprop="dateCreated datePublished" datetime="2021-07-29T20:19:29+08:00">2021-07-29</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-29 20:21:28" itemprop="dateModified" datetime="2021-07-29T20:21:28+08:00">2021-07-29</time>
+        <time title="修改时间：2021-07-30 20:51:35" itemprop="dateModified" datetime="2021-07-30T20:51:35+08:00">2021-07-30</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -627,7 +638,7 @@ if(canvas.getContext){
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E5%B8%B8%E7%90%90%E4%BA%8B/" itemprop="url" rel="index"><span itemprop="name">日常琐事</span></a>
+          <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
         </span>
     </span>
 
@@ -640,6 +651,18 @@ if(canvas.getContext){
       <span id="busuanzi_value_page_pv"></span>
     </span>
   
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">评论数：</span>
+  
+    <a title="waline" href="/archives/2a40ac23.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/archives/2a40ac23.html" data-xid="/archives/2a40ac23.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
       </div>
       <div class="post-meta">
@@ -648,14 +671,14 @@ if(canvas.getContext){
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>326</span>
+      <span>2.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -666,18 +689,128 @@ if(canvas.getContext){
     
     
     <div class="post-body" itemprop="articleBody">
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="4761be9281e92437ada4fbde020980f2fab59cf7b863f51d68a0894b5fe7ef6d">e5c8a9f599fb34a2b2bc90c630ce91a2a7517a9a4f41c950107a086654e5cd8de1c72efb0f4a0fdeee45dcb3249be30522ab9f686c921d6679f321d4d36219bb7eab5f96067d4703620bd559b30575a547df8d057fa549055138ff544362fb05639c8b9144ba1e717262c89d0f593a01e89955b1d57b28247ae5877edd01bac41e8c0bc6605f819b4104e1012b193266ae48e5c2c4dbca1c8085d458bb6104b834b2f9fe98e53a706a30da2ae8ab1bfac65174da3f73631dd5ae62bcbb5737df73a1a3ee221929c970c701af0144b76aa2b68f3eaf71089ce027ca09c10458a102dde99f94bc11996e4630e1970b49068987cfdca46d76f267dce3cc982359e549e3bf0bd35f6cd087f11cc2c380189f5d14538b06f95e24a8574ce2b598cc37581bfae6eb9ef46053026d91bb4b9b7acb267d54699b3e7bdbb5821dcc6317b26205a5754cc075a2681f0343881a03df915b94fef2553b5cf4f975f26ac716b2c1fc3101aac7895ba1538591c627c42b87ee8c16484314f5b42bab2ff77857e264a613f5b01971b74e365e653272b9ee412b322df76d9d8d890db5fbb01817d5cd8a83d41ad4f6f176216c95156a6bd0f8b5fef37622c93d87b207869593f2cdd7a9736a2d8537ae668cab82056cf064c10e564fd32b671f8b8f90e171dab1fb52504d0cdb43d5bbd20e01480da1fa212956245bfc9ecbbbf5763bc16a4cd85c97f3e5dbf18556ec14a897f0f549543ac13f472ef501d3914dfa5f6842ebb759c0bc0fc9e5afc9d421d5ab7216c8992cee94c1e4d032e00b03eacb89b4da22e5f7bc879162200dba64871c34165ab2ae1aad84d4e5057057d5fd231473e19b5a951bf02474328d84a906bee57090d2e226239baba0f9bc21ac379ce3904d83f20250a1994c3faedb2e6e8859e93a3ca37743cb279b1eef4e055aede7526529901a3376c772aa934b2f0bd35068457bfa0ca5fcfe26681b95d69ff24ef1daea5fc9f8f1021b888a1fc962d27e54a5bcbd0ca08440e036d66619c8a477eb4bffcd123745281ba191c32adccda7957287f0e552e902e0756665c53a44fbffcd8a841a25d7ad6383c579ee8b8f2c14e710852f81f3977407d5b5c018904961a19baf4c92ab808e91abc09a60dd84555e3bc1bdc1d89a92211c9c4e8178a7564798fb94caaea4f937227cb060653433e9e75522d77789fa88d6642f63523679d2534355af031241313d2f210335e5eef545491acd8ea9797d235004ff778983d22cfb49714c44152178d0dabcc9977eaeb7ab740e5d14f70a1a7c1671eb82e8954a2d9b6e453fb4f86d0ccc8ee3adee2fa02d93d4e4d951ebdeffe89a66ab70b2037f0713b9eb431a323d98922b7b4fd8b3d795055ea316f619e8e3e60ba1d7b57e1353b343169ca6ce53f9c3ed73c962d539d2af3104eb240c5ec03993eb27e44cbb2b91b04e64c7ecf17fa50e8951207f05f0f456bd1c82009af8adf3abde67d2f7c690c972100b1821695e8ba1f22e15ae29dba406f6d88447ac0c6ee2c63b4d0aa02ad39360d712f9e9470fdc7aee2f7f573a3d53ff3aabeb6e8d502cef980cf9776da7b20bc5eced31bb0414292cb19bc38d14c573050558327bf619f29114e1ba246f499a197279dc0c2a2bd7d5ccbc963ba486b1fdc72a32d0ceef2234ac778679a5a1a1431a2ab737162fe2e2e243301367ec65caf2368c36a38497fdc073a9e1a097e53c3ac59e8cc188400e0b08753d8dcc3f47b5422bd54b48d79caa5302a72eee66fb8420766f7670f4805542cfc2d6d84960a0bb180f99cf0b1354aadd1807017f051e0a91d9f4d7381a1625730f3a5dfd6b9ec88232e885f0161814203e7719d113166ed6c28815d44f51d5f30ac06615a0d478f246a4161e5eb1c651e7137863ad35b6a382b79d5d87e7e7f722f1e7200a5fdafecfd033fec4f23af799925f5f0f95734329bf202e71a0a8543f695758bd0f90e4725da08e52e30229775942abb142895a148ff16a2330983fc862f46b485dc0bdfda3efb9a47f4c702e6550aaa614eb5706a2e9c50594cd781f9f132108082d416d04b0a0b6c5477503caf310f755092f3ae44f9880837e2721fc62843b0ca25af89743724ae3582e19b34eace6eba17ba6a042e097d9dd345f98f8d23655cea713dc15f3b8da3a4087fb47988dd787ca1116aa5727471098b30b43cadfba113dabd8cb6f22245be375f434d56865d0f3a96a9be81b6414</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">输入密码，查看文章</span>
-      </label>
-    </div>
-  </div>
+        <div class="note info"><p>转载自：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://dockone.io/article/220799">如何在Windows 10家庭版上安装Docker - DockOne.io</a></p>
 </div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+<h2 id="一、Windows10家庭版安装Docker">一、Windows10家庭版安装Docker</h2>
+<span id="more"></span>
+<h3 id="1-1-所需文件">1.1 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.aliyundrive.com/s/ePbGKB36BAP">所需文件</a></h3>
+<h3 id="1-2-安装Hyper-V">1.2 安装Hyper-V</h3>
+<ul>
+<li>
+<p>创建一个文件，命名为<code>InstallHyperV.bat</code>，并添加如下内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pushd</span> <span class="string">&quot;%~dp0&quot;</span></span><br><span class="line">dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum &gt;hyper-v.txt</span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">&#x27;findstr /i . hyper-v.txt 2^&gt;nul&#x27;</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">&quot;%SystemRoot%\servicing\Packages\%%i&quot;</span></span><br><span class="line">del hyper-v.txt</span><br><span class="line">dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在管理员权限下运行<code>InstallHyperV.bat</code></p>
+</li>
+</ul>
+<h3 id="1-3-安装Containers">1.3 安装Containers</h3>
+<ul>
+<li>
+<p>再创建一个文件，命名为<code>InstallContainers.bat</code>，并添加如下内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pushd</span> <span class="string">&quot;%~dp0&quot;</span></span><br><span class="line">dir /b %SystemRoot%\servicing\Packages\*containers*.mum &gt;containers.txt</span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">&#x27;findstr /i . containers.txt 2^&gt;nul&#x27;</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">&quot;%SystemRoot%\servicing\Packages\%%i&quot;</span></span><br><span class="line">del containers.txt</span><br><span class="line">dism /online /enable-feature /featurename:Containers -All /LimitAccess /ALL</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在管理员权限下运行<code>InstallContainers.bat</code></p>
+</li>
+</ul>
+<h3 id="1-4-重启电脑">1.4 重启电脑</h3>
+<h3 id="1-5-编辑注册表中的Windows版本">1.5 编辑注册表中的Windows版本</h3>
+<ul>
+<li>
+<p>组合键<code>Windows + R</code>然后输入<code>regedit</code></p>
+</li>
+<li>
+<p>在注册表编辑页面，找到<code>\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion</code></p>
+</li>
+<li>
+<p>右键点击<code>EditionID</code>，再点击修改</p>
+</li>
+<li>
+<p>修改值为<code>Professional</code></p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/Professional.png" alt=""></p>
+</li>
+</ul>
+<h3 id="1-6-安装Docker">1.6 安装Docker</h3>
+<ul>
+<li>注意：如果重启了电脑，则<code>EditionID</code>会被重置。安装前需要重新设置</li>
+<li>接下来就是运行Docker安装包</li>
+</ul>
+<h2 id="二、Windows10专业版安装Docker">二、Windows10专业版安装Docker</h2>
+<h3 id="2-1-打开需要的服务">2.1 打开需要的服务</h3>
+<ul>
+<li>Hyper-V</li>
+<li>适用于Linux的Windows子系统</li>
+<li>虚拟机平台</li>
+</ul>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/%E5%90%AF%E7%94%A8windows%E5%8A%9F%E8%83%BD.png" alt=""></p>
+<h3 id="2-2-安装Docker">2.2 安装Docker</h3>
+<h2 id="三、常见错误">三、常见错误</h2>
+<h3 id="3-1-WSL2-报错">3.1 WSL2 报错</h3>
+<ul>
+<li>
+<p>报错如图</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/wsl2%E6%8A%A5%E9%94%99.png" alt=""></p>
+</li>
+<li>
+<p>点击<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package">链接</a>，下载下图的文件并运行</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/wsl%E5%86%85%E6%A0%B8.png" alt=""></p>
+</li>
+<li>
+<p>或者下载<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.aliyundrive.com/s/ePbGKB36BAP">所需文件</a>中的<code>wsl_update_x64.msi</code>文件，并运行</p>
+</li>
+<li>
+<p>重启服务即可</p>
+</li>
+</ul>
+<h3 id="3-2-Docker-卸载重装报错（Windows家庭版）">3.2 Docker 卸载重装报错（Windows家庭版）</h3>
+<ul>
+<li>
+<p>报错内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">System.InvalidOperationException:</span><br><span class="line">Failed to deploy distro docker-desktop to C:\Users\26921\AppData\Local\Docker\wsl\distro: <span class="built_in">exit</span> code: -1</span><br><span class="line"> stdout: �|�~~b</span><br><span class="line">N0Rc�[�v�e�N0</span><br><span class="line"></span><br><span class="line"> stderr: </span><br><span class="line">   在 Docker.ApiServices.WSL2.WslShortLivedCommandResult.LogAndThrowIfUnexpectedExitCode(String prefix, ILogger <span class="built_in">log</span>, Int32 expectedExitCode) 位置 C:\workspaces\PR-16070\src\github.com\docker\pinata\win\src\Docker.ApiServices\WSL2\WslCommand.cs:行号 146</span><br><span class="line">   在 Docker.Engines.WSL2.WSL2Provisioning.&lt;DeployDistroAsync&gt;d__17.MoveNext() 位置 C:\workspaces\PR-16070\src\github.com\docker\pinata\win\src\Docker.Desktop\Engines\WSL2\WSL2Provisioning.cs:行号 169</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>解决方法</p>
+<ul>
+<li>
+<p>先修改注册表</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/image-20210728094043590.png" alt=""></p>
+</li>
+<li>
+<p>切换容器</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/2.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、其他操作">四、其他操作</h2>
+<h3 id="4-1-Docker-上传镜像">4.1 Docker 上传镜像</h3>
+<ul>
+<li>
+<p>查看镜像ID</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/ID.png" alt=""></p>
+</li>
+<li>
+<p>修改Docker标签</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker tag ID dockerhub名字/镜像名:版本号</span></span><br><span class="line"></span><br><span class="line">docker tag c451c831cb52 zxiaosi/123:v1.0</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>上传到Docker Hub</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/push.png" alt=""></p>
+</li>
+</ul>
+<h3 id="4-2-Docker-更换位置">4.2 Docker 更换位置</h3>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/u013948858/article/details/111464534">【Docker】win10上修改docker的镜像文件存储位置（九）- 通过WSL2修改</a></li>
+</ul>
+<h3 id="4-3-Docker-连接本地数据库">4.3 Docker 连接本地数据库</h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># host=&#x27;localhost&#x27;</span></span><br><span class="line">host=<span class="string">&#x27;host.docker.internal&#x27;</span></span><br></pre></td></tr></table></figure>
+<div class="note success no-icon"><p>参考链接：【鸣谢】</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://dockone.io/article/220799">如何在Windows 10家庭版上安装Docker - DockOne.io</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/u013948858/article/details/111464534">【Docker】win10上修改docker的镜像文件存储位置（九）- 通过WSL2修改</a></p>
+</div>
+
     </div>
 
     
@@ -704,7 +837,7 @@ if(canvas.getContext){
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://hexo.zxiaosi.cn/archives/884863d2.html" title="实习入职">https://hexo.zxiaosi.cn/archives/884863d2.html</a>
+      <a href="https://hexo.zxiaosi.cn/archives/2a40ac23.html" title="Windows下Docker安装">https://hexo.zxiaosi.cn/archives/2a40ac23.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -713,7 +846,8 @@ if(canvas.getContext){
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag"><i class="fa fa-tag"></i> 日常</a>
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+              <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
           </div>
 
           <script type="text/javascript">
@@ -776,14 +910,11 @@ if(canvas.getContext){
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/archives/caff8000.html" rel="prev" title="Git常用命令">
-                  <i class="fa fa-chevron-left"></i> Git常用命令
+                <a href="/archives/884863d2.html" rel="prev" title="实习入职">
+                  <i class="fa fa-chevron-left"></i> 实习入职
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/archives/2a40ac23.html" rel="next" title="Windows下Docker安装">
-                  Windows下Docker安装 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -795,6 +926,7 @@ if(canvas.getContext){
 
 
 
+    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -906,7 +1038,7 @@ window.darkmode = darkmode;
 darkmode.showWidget();
 </script>
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://hwaline.vercel.app/","placeholder":"添加邮箱评论作者能更快的回复哦！","dark":"body.darkmode--activated","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredMeta":[],"copyright":false,"libUrl":"//cdn.jsdelivr.net/npm/@waline/client@1.3.1/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","qiniuDomain":null,"qiniuTokenUrl":null,"el":"#waline-comments","path":"/archives/884863d2.html"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://hwaline.vercel.app/","placeholder":"添加邮箱评论作者能更快的回复哦！","dark":"body.darkmode--activated","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredMeta":[],"copyright":false,"libUrl":"//cdn.jsdelivr.net/npm/@waline/client@1.3.1/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","qiniuDomain":null,"qiniuTokenUrl":null,"el":"#waline-comments","path":"/archives/2a40ac23.html"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   if(CONFIG.waline.qiniuDomain && CONFIG.waline.qiniuTokenUrl){

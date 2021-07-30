@@ -572,6 +572,139 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows下Docker安装</title>
+    <url>/archives/2a40ac23.html</url>
+    <content><![CDATA[<div class="note info"><p>转载自：<a href="http://dockone.io/article/220799">如何在Windows 10家庭版上安装Docker - DockOne.io</a></p>
+</div>
+<h2 id="一、Windows10家庭版安装Docker">一、Windows10家庭版安装Docker</h2>
+<span id="more"></span>
+<h3 id="1-1-所需文件">1.1 <a href="https://www.aliyundrive.com/s/ePbGKB36BAP">所需文件</a></h3>
+<h3 id="1-2-安装Hyper-V">1.2 安装Hyper-V</h3>
+<ul>
+<li>
+<p>创建一个文件，命名为<code>InstallHyperV.bat</code>，并添加如下内容</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">pushd</span> <span class="string">&quot;%~dp0&quot;</span></span><br><span class="line">dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum &gt;hyper-v.txt</span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">&#x27;findstr /i . hyper-v.txt 2^&gt;nul&#x27;</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">&quot;%SystemRoot%\servicing\Packages\%%i&quot;</span></span><br><span class="line">del hyper-v.txt</span><br><span class="line">dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在管理员权限下运行<code>InstallHyperV.bat</code></p>
+</li>
+</ul>
+<h3 id="1-3-安装Containers">1.3 安装Containers</h3>
+<ul>
+<li>
+<p>再创建一个文件，命名为<code>InstallContainers.bat</code>，并添加如下内容</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">pushd</span> <span class="string">&quot;%~dp0&quot;</span></span><br><span class="line">dir /b %SystemRoot%\servicing\Packages\*containers*.mum &gt;containers.txt</span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">&#x27;findstr /i . containers.txt 2^&gt;nul&#x27;</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">&quot;%SystemRoot%\servicing\Packages\%%i&quot;</span></span><br><span class="line">del containers.txt</span><br><span class="line">dism /online /enable-feature /featurename:Containers -All /LimitAccess /ALL</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在管理员权限下运行<code>InstallContainers.bat</code></p>
+</li>
+</ul>
+<h3 id="1-4-重启电脑">1.4 重启电脑</h3>
+<h3 id="1-5-编辑注册表中的Windows版本">1.5 编辑注册表中的Windows版本</h3>
+<ul>
+<li>
+<p>组合键<code>Windows + R</code>然后输入<code>regedit</code></p>
+</li>
+<li>
+<p>在注册表编辑页面，找到<code>\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion</code></p>
+</li>
+<li>
+<p>右键点击<code>EditionID</code>，再点击修改</p>
+</li>
+<li>
+<p>修改值为<code>Professional</code></p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/Professional.png" alt=""></p>
+</li>
+</ul>
+<h3 id="1-6-安装Docker">1.6 安装Docker</h3>
+<ul>
+<li>注意：如果重启了电脑，则<code>EditionID</code>会被重置。安装前需要重新设置</li>
+<li>接下来就是运行Docker安装包</li>
+</ul>
+<h2 id="二、Windows10专业版安装Docker">二、Windows10专业版安装Docker</h2>
+<h3 id="2-1-打开需要的服务">2.1 打开需要的服务</h3>
+<ul>
+<li>Hyper-V</li>
+<li>适用于Linux的Windows子系统</li>
+<li>虚拟机平台</li>
+</ul>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/%E5%90%AF%E7%94%A8windows%E5%8A%9F%E8%83%BD.png" alt=""></p>
+<h3 id="2-2-安装Docker">2.2 安装Docker</h3>
+<h2 id="三、常见错误">三、常见错误</h2>
+<h3 id="3-1-WSL2-报错">3.1 WSL2 报错</h3>
+<ul>
+<li>
+<p>报错如图</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/wsl2%E6%8A%A5%E9%94%99.png" alt=""></p>
+</li>
+<li>
+<p>点击<a href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package">链接</a>，下载下图的文件并运行</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/wsl%E5%86%85%E6%A0%B8.png" alt=""></p>
+</li>
+<li>
+<p>或者下载<a href="https://www.aliyundrive.com/s/ePbGKB36BAP">所需文件</a>中的<code>wsl_update_x64.msi</code>文件，并运行</p>
+</li>
+<li>
+<p>重启服务即可</p>
+</li>
+</ul>
+<h3 id="3-2-Docker-卸载重装报错（Windows家庭版）">3.2 Docker 卸载重装报错（Windows家庭版）</h3>
+<ul>
+<li>
+<p>报错内容</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">System.InvalidOperationException:</span><br><span class="line">Failed to deploy distro docker-desktop to C:\Users\26921\AppData\Local\Docker\wsl\distro: <span class="built_in">exit</span> code: -1</span><br><span class="line"> stdout: �|�~~b</span><br><span class="line">N0Rc�[�v�e�N0</span><br><span class="line"></span><br><span class="line"> stderr: </span><br><span class="line">   在 Docker.ApiServices.WSL2.WslShortLivedCommandResult.LogAndThrowIfUnexpectedExitCode(String prefix, ILogger <span class="built_in">log</span>, Int32 expectedExitCode) 位置 C:\workspaces\PR-16070\src\github.com\docker\pinata\win\src\Docker.ApiServices\WSL2\WslCommand.cs:行号 146</span><br><span class="line">   在 Docker.Engines.WSL2.WSL2Provisioning.&lt;DeployDistroAsync&gt;d__17.MoveNext() 位置 C:\workspaces\PR-16070\src\github.com\docker\pinata\win\src\Docker.Desktop\Engines\WSL2\WSL2Provisioning.cs:行号 169</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>解决方法</p>
+<ul>
+<li>
+<p>先修改注册表</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/image-20210728094043590.png" alt=""></p>
+</li>
+<li>
+<p>切换容器</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/2.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、其他操作">四、其他操作</h2>
+<h3 id="4-1-Docker-上传镜像">4.1 Docker 上传镜像</h3>
+<ul>
+<li>
+<p>查看镜像ID</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/ID.png" alt=""></p>
+</li>
+<li>
+<p>修改Docker标签</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker tag ID dockerhub名字/镜像名:版本号</span></span><br><span class="line"></span><br><span class="line">docker tag c451c831cb52 zxiaosi/123:v1.0</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>上传到Docker Hub</p>
+<p><img data-src="https://gitee.com/zxiaosi/image/raw/master/Hexo/Docker%E5%AE%89%E8%A3%85/push.png" alt=""></p>
+</li>
+</ul>
+<h3 id="4-2-Docker-更换位置">4.2 Docker 更换位置</h3>
+<ul>
+<li><a href="https://blog.csdn.net/u013948858/article/details/111464534">【Docker】win10上修改docker的镜像文件存储位置（九）- 通过WSL2修改</a></li>
+</ul>
+<h3 id="4-3-Docker-连接本地数据库">4.3 Docker 连接本地数据库</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># host=&#x27;localhost&#x27;</span></span><br><span class="line">host=<span class="string">&#x27;host.docker.internal&#x27;</span></span><br></pre></td></tr></table></figure>
+<div class="note success no-icon"><p>参考链接：【鸣谢】</p>
+<p><a href="http://dockone.io/article/220799">如何在Windows 10家庭版上安装Docker - DockOne.io</a></p>
+<p><a href="https://blog.csdn.net/u013948858/article/details/111464534">【Docker】win10上修改docker的镜像文件存储位置（九）- 通过WSL2修改</a></p>
+</div>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>实习入职</title>
     <url>/archives/884863d2.html</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">

@@ -1013,20 +1013,6 @@ if(canvas.getContext){
 
 
 
-
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://hwaline.vercel.app/","placeholder":"添加邮箱评论作者能更快的回复哦！","dark":"body.darkmode--activated","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredMeta":[],"copyright":false,"libUrl":"//cdn.jsdelivr.net/npm/@waline/client@1.3.1/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","qiniuDomain":null,"qiniuTokenUrl":null,"el":"#waline-comments","path":"/archives/f8fffde8.html"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  if(CONFIG.waline.qiniuDomain && CONFIG.waline.qiniuTokenUrl){
-    CONFIG.waline.uploadImage = qiniuUploadImage;
-  }
-  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <script>
@@ -1046,6 +1032,20 @@ var options = {
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
+</script>
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://hwaline.vercel.app/","placeholder":"添加邮箱评论作者能更快的回复哦！","dark":"body.darkmode--activated","avatar":"wavatar","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredMeta":[],"copyright":false,"libUrl":"//cdn.jsdelivr.net/npm/@waline/client@1.3.1/dist/Waline.min.js","avatarCDN":"https://sdn.geekzu.org/avatar/","qiniuDomain":null,"qiniuTokenUrl":null,"el":"#waline-comments","path":"/archives/f8fffde8.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  if(CONFIG.waline.qiniuDomain && CONFIG.waline.qiniuTokenUrl){
+    CONFIG.waline.uploadImage = qiniuUploadImage;
+  }
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
 </script>
 
 

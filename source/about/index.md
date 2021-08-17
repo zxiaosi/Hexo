@@ -5,11 +5,13 @@ comments: false
 
 ---
 
+<hr/>
+
 ## <center>个人介绍</center>
 
 <center>小四先生，理工男，一名在校大学生</center>
 
-<center>独立游戏开发爱好者</center>
+<center>目前在实习</center>
 
 <center>人生目标：全栈工程师</center>
 
@@ -25,11 +27,4 @@ comments: false
 
 <hr/>
 
- <center>一身清贫怎敢入繁华，两袖清风怎敢误佳人</center>
-<center>三餐不济怎敢叙高堂，四季漂离怎敢言家成</center>
-<center>五行缺钱卑从心中生，六行不济万般不如人</center>
-<center>七窍玲珑需知天下事，八面圆通难知佳人意</center>
-<center>九世轮回渡佳人一笑，十载梦离无言与相尽</center>
-<center>百月难提伊人欢颜笑，千日独品红尘万般忧</center>
-
-<hr/>
+<center>✨十年时间✨</center>
